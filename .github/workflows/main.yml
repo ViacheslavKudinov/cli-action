@@ -19,7 +19,9 @@ jobs:
         id: install
       - name: Test CLI
         run: doppler --version
-      - name: Self check
+      - name: Install CLI
+        uses: ./
+      - name: Test CLI Version Output
         run: |
           if [ "${{ matrix.os }}" == "windows-latest" ] || [ "${{ matrix.os }}" == "windows-2022" ] || [ "${{ matrix.os }}" == "windows-2025" ]; then
             doppler --version | findstr "Doppler CLI version"
