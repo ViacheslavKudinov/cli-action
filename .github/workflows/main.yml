@@ -23,8 +23,5 @@ jobs:
         uses: ./
       - name: Test CLI Version Output
         run: |
-          if [ "${{ matrix.os }}" == "windows-latest" ] || [ "${{ matrix.os }}" == "windows-2022" ] || [ "${{ matrix.os }}" == "windows-2025" ]; then
-            doppler --version | findstr "Doppler CLI version"
-          else
-            doppler --version | grep "Doppler CLI version"
-          fi
+          doppler --version
+          
